@@ -1,0 +1,33 @@
+<style>
+body {text-align: center;}
+</style>
+<body>
+<br><br>
+<h1>Welcome to Gameroom!!!</h1>
+<br>
+<button id="button"><h4>Load Game</h4></button>
+<div id="player"></div>
+</body>
+
+<script>
+document.getElementById('button').addEventListener('click', loadGame);
+
+
+function loadGame()
+{
+	var xhr = new XMLHttpRequest();
+	//console.log('xhr');
+	xhr.open('GET','index.html', true);
+
+	xhr.onload = function()
+	{
+		if(this.status == 200)
+		{
+			//console.log(this.responseText);
+			//var output = 'you redirect to game room';
+			document.getElementById('player').innerHTML = this.responseText;
+		}
+	}
+	xhr.send();
+}
+</script>

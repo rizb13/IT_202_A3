@@ -1,0 +1,36 @@
+<style>
+form { margin: auto;
+       width: 20%;
+       border: 1px solid black;
+       padding: 30px;
+     }
+h3 {margin-top: 5em;
+	text-align: center;}
+h5 {text-align: center;}
+</style>
+
+<h3> Registration Page </h3>
+<form action = "registration.php" method = "GET">
+<br><input type=text name="email" autocomplete=off>Email Address<br>
+<br><input type=text name="name" autocomplete=off>Full Name<br>
+<br><input type=password name="pass" id="pass" autocomplete=off>password<br>
+<a href="resetpass.html" >Forget Password</a>
+<br><input type=checkbox onclick="hide_pass()">Show Password<br>
+<input type=text name="cell_num" autocomplete=off>contact number<br><br>
+<br><input type=submit value="Submit"><br>
+</form>
+<script>
+function hide_pass()
+{
+var p = document.getElementById("pass");
+if(p.type === "text")
+{
+p.type = "password";
+}
+else
+{
+p.type = "text";
+}
+}
+</script>
+<h5> already registered <a href="authenticate.html" > Login </a><br> </h5>
